@@ -4,7 +4,9 @@ const $info = document.getElementById('info');
 
 
 const startCells = [
-    "","","","","","","","",""
+    "","","",
+    "","","",
+    "","",""
 ]
 
 let go = 'circle';
@@ -13,14 +15,12 @@ $info.textContent = 'Circle goes first'
 
 
 const genereteBoard = () => {
-    startCells.forEach( (_cell, index) => {
+    startCells.forEach( ( _cell, index) => {
         const cellItem = document.createElement('div');
         cellItem.classList.add("square");
         cellItem.id = index; 
         cellItem.addEventListener('click', addGo)
         $gameboard.appendChild(cellItem);
-        
-
     } )
 }
 
@@ -40,7 +40,6 @@ const checkScore = () => {
 
         if(crossWin) {
             $info.textContent = 'Cross Wins!'
-            allCells.forEach( square => square.replaceWith(square.cloneNode(true)))
             alert('To restart the game restart the page, you can also use A and B buttons');
             return $info;
             
@@ -49,7 +48,6 @@ const checkScore = () => {
 
         if(circleWin) {
             $info.textContent = 'Circle Wins!';
-            allCells.forEach( square => square.replaceWith(square.cloneNode(true)));
             alert('To restart the game restart the page, you can also use A and B buttons')
             return $info;
         }
