@@ -1,6 +1,8 @@
 const $gameboard = document.getElementById('gameboard');
 const $info = document.getElementById('info');
 
+
+
 const startCells = [
     "","","","","","","","",""
 ]
@@ -28,7 +30,7 @@ const checkScore = () => {
     const winningCombos = [
         [0,1,2] , [3,4,5] , [6,7,8],
         [0,3,6] , [1,4,7] , [2,5,8],
-        [0,4,8] , [2,4,6]    ]
+        [0,4,8] , [2,4,6] ]
 
     winningCombos.forEach( combo => {
 
@@ -39,14 +41,17 @@ const checkScore = () => {
         if(crossWin) {
             $info.textContent = 'Cross Wins!'
             allCells.forEach( square => square.replaceWith(square.cloneNode(true)))
-            return
+            alert('To restart the game restart the page, you can also use A and B buttons');
+            return $info;
+            
         }
         
 
         if(circleWin) {
-            $info.textContent = 'Circle Wins!'
-            allCells.forEach( square => square.replaceWith(square.cloneNode(true)))
-            return $info
+            $info.textContent = 'Circle Wins!';
+            allCells.forEach( square => square.replaceWith(square.cloneNode(true)));
+            alert('To restart the game restart the page, you can also use A and B buttons')
+            return $info;
         }
     })
     
@@ -63,3 +68,12 @@ const addGo = (event) => {
     checkScore()
 };
 genereteBoard();
+
+
+
+  
+
+// Aggiungiamo un evento al pulsante di reset per inizializzare nuovamente il gioco
+const $resetButton = document.querySelectorAll('.reset-button');
+$resetButton.forEach(element => element.addEventListener('click', () => location.reload()));
+

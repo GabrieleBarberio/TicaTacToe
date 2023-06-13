@@ -49,6 +49,16 @@ h1 {
   align-items: center;
 }
 
+.a button,
+.b button {
+  background-color: transparent;
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+  font-family:"Press Start 2P", cursive; ;
+}
+
+
 .a {
   position: absolute;
   top: 555px;
@@ -66,6 +76,8 @@ h1 {
 
 #gameboard {
   width: 300px;
+  width: 100%;
+  height: 100%;
   margin: auto;
   height: 300px;
   background-color: rgb(29, 22, 22);
@@ -94,8 +106,8 @@ h1 {
 }
 
 #gameboard .square {
-  width: 100px;
-  height: 100px;
+  width: 33%;
+  height: 34%;
   background-color: rgb(225, 255, 253);
   display: flex;
   justify-content: center;
@@ -108,7 +120,7 @@ h1 {
   width: 90px;
   border-radius: 50%;
   box-sizing: border-box;
-  border: 15px solid blue;
+  border: 15px solid rgb(66, 66, 66);
 }
 
 .cross {
@@ -122,7 +134,7 @@ h1 {
 .cross:after {
   content: "";
   position: absolute;
-  background-color: red;
+  background-color: rgb(140, 140, 140);
 }
 
 .cross:before {
